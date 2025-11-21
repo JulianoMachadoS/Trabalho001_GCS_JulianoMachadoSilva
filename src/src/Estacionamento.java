@@ -44,4 +44,20 @@ public class Estacionamento{
     public String toString(){
         return "Estacionamento de " + fila + " linhas e " + vaga + " colunas, totalizando " + (vaga * fila) + " vagas.";
     }
+    public boolean checkout(String placa) {
+        for (int i = 0; i < fila; i++) {
+            for (int j = 0; j < vaga; j++) {
+                if (estacionamento[i][j] != null && estacionamento[i][j].getPlaca().equalsIgnoreCase(placa)) {
+
+                    // Encontrado! Remove e informa.
+                    String carroRemovido = estacionamento[i][j].getNome();
+                    estacionamento[i][j] = null;
+                    System.out.println("SUCESSO CHECKOUT: O carro " + carroRemovido + " de placa " + placa + " liberou a vaga [" + (i + 1) + "][" + (j + 1) + "]");
+                    return true;
+                }
+            }
+        }
+        System.out.println("ERRO CHECKOUT: Carro com placa " + placa + " nao encontrado no estacionamento.");
+        return false;
+    }
 }
