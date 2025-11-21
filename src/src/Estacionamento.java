@@ -52,7 +52,10 @@ public class Estacionamento{
                     // Encontrado! Remove e informa.
                     String carroRemovido = estacionamento[i][j].getNome();
                     estacionamento[i][j] = null;
-                    System.out.println("SUCESSO CHECKOUT: O carro " + carroRemovido + " de placa " + placa + " liberou a vaga [" + (i + 1) + "][" + (j + 1) + "]");
+
+                    // *MENSAGEM DE SUCESSO MODIFICADA* - Ponto onde o conflito será criado depois
+                    System.out.println("SUCESSO CHECKOUT: O carro " + carroRemovido + " de placa " + placa + " LIBEROU a vaga [" + (i + 1) + "][" + (j + 1) + "]");
+
                     return true;
                 }
             }
