@@ -18,5 +18,6 @@ public class App {
 
         Carro c4 = new Carro("Uno", "XYZ-1111", 2000);
         e1.estacionar(0, 0, c4); // Tentativa em vaga ocupada
+        e1.checkout("QWE-9876");
     }
 }
